@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
+const SWIPE_THRESHOLD = 0.25 * SCREEN_WIDTH;
 
 class Deck extends Component {
   constructor(props) {
@@ -19,10 +20,27 @@ class Deck extends Component {
       onPanResponderMove: (event, gesture) => {
         position.setValue({ x: gesture.dx, y:gesture.dy });
       },
-      onPanResponderRelease: () => {}
+      onPanResponderRelease: () => {
+        if (gesture.dx > SWIPE_THRESHOLD) {
+          console.log('Swipe Right');
+        } else if (gesture.dx < -SWIPE_THRESHOLD) {
+          console.log('Swipe Left');
+        } else {
+          this.resetPosition();
+        }
+      }
     });
 
     this.state = { panResponder, position };
+  }
+
+  resetPosition = () => {
+    Animated.spring(this.state.position, {
+      toValue: {
+        x: 0,
+        y: 0
+      }
+    }).start();
   }
 
 
