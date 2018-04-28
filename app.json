@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "swipe",
-    "description": "This project is really great.",
+    "description": "Card Animation (Tinder Like)",
     "slug": "swipe",
     "privacy": "public",
     "sdkVersion": "25.0.0",
