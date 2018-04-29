@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "swipe",
+    "name": "CardSwiping",
     "description": "Card Animation (Tinder Like)",
     "slug": "swipe",
     "privacy": "public",
