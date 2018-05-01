@@ -1,6 +1,7 @@
 # CardSwiping
 
-React native card swiping animation project 
+React native card swiping animation project.
+
 Created this app as a part of the **React Native: Advanced Concepts** project from Udemy.
 
 ## Features Included
